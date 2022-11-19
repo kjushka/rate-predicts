@@ -25,7 +25,7 @@ jobs:
         python-version: "3.9"
     - name: Install dependencies
       run: |
-        python3 -m pip install -r requirements.txt
+        python3 -m pip install -r requirements.txt --user
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
