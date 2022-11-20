@@ -29,5 +29,5 @@ def make_prediction():
         return 'Content-Type not supported!'
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000, debug=False)

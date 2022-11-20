@@ -1,7 +1,10 @@
-FROM python:3.9
-COPY . /rate-predicts
-WORKDIR /rate-predicts
-RUN /usr/local/bin/python -m pip install --upgrade pip
-RUN PYTHONPATH=/usr/bin/python pip install -r requirements.txt
-ENTRYPOINT [ "python3"]
-CMD [ "main.py" ]
+FROM python:3.8-slim-buster
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD [ "python3", "-m" , "flask", "--app", "main.py", "run", "--host=0.0.0.0"]
